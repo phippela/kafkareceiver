@@ -13,3 +13,11 @@ Defaults:
 Test producer:
 python sample_producer.py
 (Adjust broker/ topic if needed)
+
+python -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+# start FastAPI
+uvicorn app.main:app --reload
+# in another terminal send sample message:
+python sample_producer.py
