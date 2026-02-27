@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <title>Message {{ msg.id }}</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <style>#map{height:300px;margin-bottom:10px} pre{background:#f7f7f7;padding:10px;overflow:auto}</style>
+</head>
+<body>
+  <a href="/">← back</a>
+  <h1>Message {{ msg.id }}</h1>
+  <p><strong>UID:</strong> {{ msg.uid }} &nbsp; <strong>Type:</strong> {{ msg.type }} &nbsp; <strong>Time:</strong> {{ msg.time }}</p>
+  {% if msg.lat and msg.lon %}
+  <div id="map"></div>
+  {% endif %}
+  <h3>Raw XML</h3>
+  <pre>{{ msg.raw_xml }}</pre>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+  {% if msg.lat and msg.lon %} const lat = {{ msg.lat | tojson }}; const lon = {{ msg.lon | tojson }}; const map = L.map('map').setView([lat, lon], 13); L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", { maxZoom: 19 }).addTo(map); L.marker([lat, lon]).addTo(map); {% endif %}  </script>
+</body>
+</html>
