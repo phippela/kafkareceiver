@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request, HTTPException
 from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
+from starlette.responses import RedirectResponse
 from starlette.templating import Jinja2Templates
 from .db import engine, SessionLocal, Base
 from .models import Message
@@ -35,6 +36,16 @@ def message_detail(request: Request, msg_id: int):
     if not m:
         raise HTTPException(status_code=404, detail="Message not found")
     return templates.TemplateResponse("detail.html", {"request": request, "msg": m})
+
+@app.post("/message/{msg_id}/delete")
+def delete_message(msg_id: int):
+    db = next(get_db())
+    m = db.query(Message).get(msg_id)
+    if not m:
+        raise HTTPException(status_code=404, detail="Message not found")
+    db.delete(m)
+    db.commit()
+    return RedirectResponse(url="/", status_code=303)
 
 @app.get("/api/messages")
 def api_messages():

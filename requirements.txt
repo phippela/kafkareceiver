@@ -4,3 +4,4 @@ confluent-kafka
 sqlalchemy
 jinja2
 python-multipart
+confluent-kafka
