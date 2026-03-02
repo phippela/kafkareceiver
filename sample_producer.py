@@ -3,7 +3,7 @@ import uuid
 import time
 import aio_pika
 
-AMQP_URL = "amqp://guest:guest@localhost/"
+AMQP_URL = "amqp://guest:guest@localhost:5673/"
 QUEUE = "cot"
 
 

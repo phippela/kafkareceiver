@@ -8,7 +8,7 @@ from .db import engine, SessionLocal, Base
 from .models import Message
 from .amqp_consumer import start_consumer
 
-AMQP_URL = "amqp://guest:guest@localhost/"
+AMQP_URL = "amqp://guest:guest@localhost:5673/"
 AMQP_QUEUE = "cot"
 
 @asynccontextmanager
