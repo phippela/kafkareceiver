@@ -12,7 +12,24 @@
   <form method="post" action="/message/{{ msg.id }}/delete" onsubmit="return confirm('Delete this message?');" style="margin:8px 0;">
     <button type="submit">delete</button>
   </form>
-  <p><strong>UID:</strong> {{ msg.uid }} &nbsp; <strong>Type:</strong> {{ msg.type }} &nbsp; <strong>Time:</strong> {{ msg.time }}</p>
+<p>
+  <strong>Callsign:</strong> {{ msg.callsign }} &nbsp;
+  <strong>UID:</strong> {{ msg.uid }} &nbsp;
+  <strong>Type:</strong> {{ msg.type }} &nbsp;
+  <strong>How:</strong> {{ msg.how }} &nbsp;
+  <strong>Time:</strong> {{ msg.time }} &nbsp;
+  <strong>Start:</strong> {{ msg.event_start }} &nbsp;
+  <strong>Stale:</strong> {{ msg.stale }}
+</p>
+{% if msg.lat and msg.lon %}
+<p>
+  <strong>Lat:</strong> {{ msg.lat }} &nbsp;
+  <strong>Lon:</strong> {{ msg.lon }} &nbsp;
+  <strong>HAE:</strong> {{ msg.hae }} &nbsp;
+  <strong>CE:</strong> {{ msg.ce }} &nbsp;
+  <strong>LE:</strong> {{ msg.le }}
+</p>
+{% endif %}
   {% if msg.lat and msg.lon %}
   <div id="map"></div>
   {% endif %}

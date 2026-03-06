@@ -1,0 +1,23 @@
+
+Exchange	(AMQP default)
+Routing Key	cot
+Redelivered	○
+Properties	
+type:	amqp-1.0
+timestamp:	1772791264241
+message_id:	ID:43becf54-8fe9-4634-9c45-d9930dcf07fb:1:1:1-1
+delivery_mode:	2
+headers:	
+x-amqp-1.0-app-properties:	Not UTF-8, base64 is: AFN0wRQCoQlvcGVyYXRpb26hBmNyZWF0ZQ==
+x-amqp-1.0-message-annotations:	Not UTF-8, base64 is: AFNywSkEow54LW9wdC1qbXMtZGVzdFEAoxJ4LW9wdC1qbXMtbXNnLXR5cGVRBQ==
+x-amqp-1.0-properties:	Not UTF-8, base64 is: AFNz0AAAAEoAAAAKoS9JRDo0M2JlY2Y1NC04ZmU5LTQ2MzQtOWM0NS1kOTkzMGRjZjA3ZmI6MTox
+OjEtMUChA2NvdEBAQEBAQIMAAAGcwpfz8Q==
+Payload
+451 bytes
+Encoding: base64
+AFN3sQAAAbs8P3htbCB2ZXJzaW9uPSIxLjAiIGVuY29kaW5nPSJVVEYtOCIgc3RhbmRhbG9uZT0ieWVzIj8+CjxldmVudCB2ZXJzaW9uPSIyLjAiIHVpZD0i
+YjRhMGVmNmYtNDJlYS00MjA1LTk5NDctODk2NjFhNGJmZTIxIiB0eXBlPSJhLWYtRy1VLUMtQSIgdGltZT0iMjAyNi0wMy0wNlQxMDowMTowNC4yMTFaIiBz
+dGFydD0iMjAyNi0wMy0wNlQxMDowMTowNC4yMTFaIiBzdGFsZT0iMjAyNi0wNC0wNVQxMDowMTowNC4yMTFaIiBob3c9ImgtZy1pLWctbyI+CiAgICA8cG9p
+bnQgbGF0PSI2MC4xODI2NjQiIGxvbj0iMjQuOTUyOTg2IiBoYWU9IjAuMCIgY2U9IjEuMCIgbGU9IjEuMCIvPgogICAgPGRldGFpbD4KICAgICAgICA8Y29u
+dGFjdCBjYWxsc2lnbj0idmlodTgiLz4KICAgICAgICA8bGluayBwb2ludD0iNjAuMTgyNjY0LDI0Ljk1Mjk4NiIvPgogICAgPC9kZXRhaWw+CjwvZXZlbnQ+
+Cg==

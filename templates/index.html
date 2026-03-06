@@ -10,22 +10,18 @@
   <h1>Cot Messages</h1>
   <div id="map"></div>
   <table>
-    <thead><tr><th>UID</th><th>Type</th><th>Time</th><th>Details</th><th>Delete</th></tr></thead>
-    <tbody>
-      {% for m in messages %}
-      <tr>
-        <td>{{ m.uid }}</td>
-        <td>{{ m.type }}</td>
-        <td>{{ m.time }}</td>
-        <td><a href="/message/{{ m.id }}">open</a></td>
-        <td>
-          <form method="post" action="/message/{{ m.id }}/delete" onsubmit="return confirm('Delete this message?');">
-            <button type="submit">delete</button>
-          </form>
-        </td>
-      </tr>
-      {% endfor %}
-    </tbody>
+<thead><tr><th>Callsign</th><th>UID</th><th>Type</th><th>Time</th><th>Details</th></tr></thead>
+<tbody>
+  {% for m in messages %}
+  <tr>
+    <td>{{ m.callsign }}</td>
+    <td>{{ m.uid }}</td>
+    <td>{{ m.type }}</td>
+    <td>{{ m.time }}</td>
+    <td><a href="/message/{{ m.id }}">open</a></td>
+  </tr>
+  {% endfor %}
+</tbody>
   </table>
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
   <script src="/static/js/map.js"></script>
