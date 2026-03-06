@@ -28,7 +28,7 @@ async def main():
     connection = await aio_pika.connect_robust(AMQP_URL)
     async with connection:
         channel = await connection.channel()
-        await channel.declare_queue(QUEUE, durable=True)
+        await channel.declare_queue(QUEUE, durable=False)
         body = make_cot().encode()
         await channel.default_exchange.publish(
             aio_pika.Message(body=body, delivery_mode=aio_pika.DeliveryMode.PERSISTENT),

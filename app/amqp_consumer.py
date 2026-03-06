@@ -50,7 +50,7 @@ async def _consume_loop(url: str, queue_name: str) -> None:
             async with connection:
                 channel = await connection.channel()
                 await channel.set_qos(prefetch_count=10)
-                queue = await channel.declare_queue(queue_name, durable=True)
+                queue = await channel.declare_queue(queue_name, durable=False)
                 print(f"[AMQP] Listening on queue '{queue_name}' at {url}")
                 async with queue.iterator() as it:
                     async for message in it:
